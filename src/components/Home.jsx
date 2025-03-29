@@ -35,7 +35,7 @@ const Home = () => {
                 <div className="flex justify-center items-center my-2">
                     <div id="blog-post" key={blog.id} className="bg-white rounded-xl border border-orange-800 my-2 p-3 w-[700px] flex flex-col items-center justify-center">
                         <h2 className="font-blackx text-[32px] text-orange-700">{blog.title}</h2>
-                        <p className="text-black font-bold">{blog.description}</p>
+                        <p className="text-black text-center">{blog.description}</p>
                         <p className="text-clack font-bold">Written by: {blog.author}</p>
 
 
