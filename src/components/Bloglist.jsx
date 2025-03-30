@@ -1,6 +1,7 @@
 export const Bloglist = (props) => {
     const blogs = props.blogs;
     const title = props.title
+    const remove = props.delete
     
     
 
@@ -9,12 +10,8 @@ export const Bloglist = (props) => {
         <>
             <div id="blog-list">
                 
-                <div className="bg-orange-700  flex flex-col px-24 py-7 items-center justify-center gap-6">
-                    <h1 className="text-white text-[64px] font-bold">Home Page</h1>
-                    <p className="text-[32px] text-white">Find and enjoy content from authors world wide</p>
-                    <p></p>
-                </div>
-                <h2>{title}</h2>
+                
+                <h2 className="text-orange-700 text-[40px] font-black flex flex-col px-24 py-7 items-center justify-center">{title}</h2>
                 <div className="my-12 grid grid-cols-2 gap-6 px-24">
                     {blogs.map(blog => (
                         <div className="flex justify-center items-center my-2">
@@ -24,14 +21,16 @@ export const Bloglist = (props) => {
                                 <p className="text-clack font-bold">Written by: {blog.author}</p>
                                 
 
-                                <div className="flex font-bold px-4 justify-between text-orange-800 w-full">
+                                <div className="flex font-bold px-4 justify-between text-orange-800 w-full my-4">
                                     <p>likes {blog.likes}</p>
-                                    <p>comments{blog.comments}</p>
+                                    <button className="bg-red-300 rounded-lg border border-red-600 p-2 text-red-900">Delete blog</button>
+                                    <p onClick={() => handleDelete(blog.id)}>comments{blog.comments}</p>
+                                    
                                 </div>
                             </div>
                         </div>
                     ))}
-                    
+
                 </div>
             </div>
         </>
