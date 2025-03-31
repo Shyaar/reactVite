@@ -1,7 +1,8 @@
 export const Bloglist = (props) => {
     const blogs = props.blogs;
     const title = props.title
-    const remove = props.delete
+    const remove = props.remove
+
     
     
 
@@ -23,8 +24,8 @@ export const Bloglist = (props) => {
 
                                 <div className="flex font-bold px-4 justify-between text-orange-800 w-full my-4">
                                     <p>likes {blog.likes}</p>
-                                    <button className="bg-red-300 rounded-lg border border-red-600 p-2 text-red-900">Delete blog</button>
-                                    <p onClick={() => handleDelete(blog.id)}>comments{blog.comments}</p>
+                                    <button onClick={() => remove(blog.id)} className="bg-red-300 rounded-lg border border-red-600 p-2 text-red-900">Delete blog</button>
+                                    <p>comments{blog.comments}</p>
                                     
                                 </div>
                             </div>
